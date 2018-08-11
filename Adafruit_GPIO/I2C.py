@@ -50,7 +50,7 @@ def get_default_bus():
         else:
             # Revision 2 Pi uses I2C bus 1.
             return 1
-    elif plat == Platform.BEAGLEBONE_BLACK or plt == Platform.ARIETTAG25:
+    elif plat == Platform.BEAGLEBONE_BLACK or plat == Platform.ARIETTAG25:
         # Beaglebone Black has multiple I2C buses, default to 1 (P9_19 and P9_20).
         return 1
     else:
