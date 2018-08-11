@@ -26,6 +26,7 @@ UNKNOWN          = 0
 RASPBERRY_PI     = 1
 BEAGLEBONE_BLACK = 2
 MINNOWBOARD      = 3
+ARIETTAG25       = 4
 
 def platform_detect():
     """Detect if running on the Raspberry Pi or Beaglebone Black and return the
@@ -45,7 +46,8 @@ def platform_detect():
         return BEAGLEBONE_BLACK
     elif plat.lower().find('armv7l-with-glibc2.4') > -1:
         return BEAGLEBONE_BLACK
-        
+    elif plat.lower().find("armv5tejl-with-debian") > -1:
+        return ARIETTAG25
     # Handle Minnowboard
     # Assumption is that mraa is installed
     try: 
